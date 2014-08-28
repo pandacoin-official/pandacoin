@@ -342,7 +342,7 @@ T채m채 tuote sis채lt채채 OpenSSL-projektin kehitt채m채채 ohjelmistoa OpenSSL-ty�
     <message>
         <location line="+5"/>
         <source>&amp;Address Book</source>
-        <translation>%Osoitekirja</translation>
+        <translation>&amp;Osoitekirja</translation>
     </message>
     <message>
         <location line="+1"/>
