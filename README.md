@@ -1,1 +1,1 @@
-This project is not maintained anymore.
+Pandacoin PND to continue it's evoulution as the Digital Pandacoin project.
