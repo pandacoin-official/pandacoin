@@ -10,7 +10,7 @@ SetCompressor /SOLID lzma
 !define URL http://pandacoinpnd.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "pixmaps\bitcoin.ico"
+!define MUI_ICON "pixmaps\pandacoin.ico"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "pixmaps\nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
