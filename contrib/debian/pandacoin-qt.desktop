@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Pandacoin
+Comment=Ditial Pandacoin P2P Cryptocurrency
+Comment[fr]=Ditial Pandacoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Ditial Pandacoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/pandacoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/pandacoin80.xpm
+MimeType=x-scheme-handler/pandacoin;
+Categories=Office;Finance;

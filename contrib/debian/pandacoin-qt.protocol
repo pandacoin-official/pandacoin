@@ -1,6 +1,6 @@
 [Protocol]
-exec=novacoin-qt '%u'
-protocol=novacoin
+exec=pandacoin-qt '%u'
+protocol=pandacoin
 input=none
 output=none
 helper=true
