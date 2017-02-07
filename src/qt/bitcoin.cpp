@@ -150,9 +150,9 @@ int main(int argc, char *argv[])
     app.setOrganizationName("Pandacoin");
     //XXX app.setOrganizationDomain("");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
-        app.setApplicationName("Pandacoin-Qt-testnet");
+        app.setApplicationName("Digital Pandacoin-Qt-testnet");
     else
-        app.setApplicationName("Pandacoin-Qt");
+        app.setApplicationName("Digital Pandacoin-Qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
