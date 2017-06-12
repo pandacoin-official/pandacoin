@@ -805,7 +805,8 @@ bool AppInit2(OptionsModel& optionsModel)
     currentClientMode = ClientFull;
     #else
     //fixme: LIGHT HYBRID check no other options have messed up here?
-    optionsModel.Upgrade(); // Must be done after wallet load
+    // optionsModel.Upgrade(); // Must be done after wallet load
+    currentClientMode = ClientFull;
     #endif
 
     // fixme: Should this override config?
