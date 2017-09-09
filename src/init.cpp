@@ -870,11 +870,13 @@ bool AppInit2(OptionsModel& optionsModel)
     }
     if (pindexBest != pindexRescan && pindexBest && pindexRescan && pindexBest->nHeight > pindexRescan->nHeight)
     {
-        uiInterface.InitMessage(_("Rescanning..."));
-        printf("Rescanning last %i blocks (from block %i)...\n", pindexBest->nHeight - pindexRescan->nHeight, pindexRescan->nHeight);
-        nStart = GetTimeMillis();
+        //uiInterface.InitMessage(_("Rescanning..."));
+        //printf("Rescanning last %i blocks (from block %i)...\n", pindexBest->nHeight - pindexRescan->nHeight, pindexRescan->nHeight);
+        //nStart = GetTimeMillis();
+        printf("Rescan starting ...\n");
         pwalletMain->ScanForWalletTransactions(pindexRescan, true);
-        printf(" rescan      %15" PRId64 "ms\n", GetTimeMillis() - nStart);
+        //printf(" rescan      %15" PRId64 "ms\n", GetTimeMillis() - nStart);
+        printf("Rescan submited\n");
     }
 
     // ********************************************************* Step 8: load blockchain
