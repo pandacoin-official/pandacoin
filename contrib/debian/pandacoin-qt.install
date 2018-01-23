@@ -1,0 +1,5 @@
+pandacoin-qt usr/bin
+share/pixmaps/pandacoin32.xpm usr/share/pixmaps
+share/pixmaps/panadacoin80.xpm usr/share/pixmaps
+debian/pandacoin-qt.desktop usr/share/applications
+debian/pandacoin-qt.protocol usr/share/kde4/services/

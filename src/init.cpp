@@ -805,7 +805,8 @@ bool AppInit2(OptionsModel& optionsModel)
     currentClientMode = ClientFull;
     #else
     //fixme: LIGHT HYBRID check no other options have messed up here?
-    optionsModel.Upgrade(); // Must be done after wallet load
+    // optionsModel.Upgrade(); // Must be done after wallet load
+    currentClientMode = ClientFull;
     #endif
 
     // fixme: Should this override config?
@@ -853,7 +854,7 @@ bool AppInit2(OptionsModel& optionsModel)
     }
 
     printf("%s", strErrors.str().c_str());
-    printf(" wallet      %15"PRId64"ms\n", GetTimeMillis() - nStart);
+    printf(" wallet      %15" PRId64 "ms\n", GetTimeMillis() - nStart);
 
     RegisterWallet(pwalletMain);
 
@@ -869,11 +870,13 @@ bool AppInit2(OptionsModel& optionsModel)
     }
     if (pindexBest != pindexRescan && pindexBest && pindexRescan && pindexBest->nHeight > pindexRescan->nHeight)
     {
-        uiInterface.InitMessage(_("Rescanning..."));
-        printf("Rescanning last %i blocks (from block %i)...\n", pindexBest->nHeight - pindexRescan->nHeight, pindexRescan->nHeight);
-        nStart = GetTimeMillis();
+        //uiInterface.InitMessage(_("Rescanning..."));
+        //printf("Rescanning last %i blocks (from block %i)...\n", pindexBest->nHeight - pindexRescan->nHeight, pindexRescan->nHeight);
+        //nStart = GetTimeMillis();
+        printf("Rescan starting ...\n");
         pwalletMain->ScanForWalletTransactions(pindexRescan, true);
-        printf(" rescan      %15"PRId64"ms\n", GetTimeMillis() - nStart);
+        //printf(" rescan      %15" PRId64 "ms\n", GetTimeMillis() - nStart);
+        printf("Rescan submited\n");
     }
 
     // ********************************************************* Step 8: load blockchain
@@ -908,7 +911,7 @@ bool AppInit2(OptionsModel& optionsModel)
         printf("Shutdown requested. Exiting.\n");
         return false;
     }
-    printf(" block index %15"PRId64"ms\n", GetTimeMillis() - nStart);
+    printf(" block index %15" PRId64 "ms\n", GetTimeMillis() - nStart);
 
     if (GetBoolArg("-printblockindex") || GetBoolArg("-printblocktree"))
     {
@@ -1011,7 +1014,7 @@ bool AppInit2(OptionsModel& optionsModel)
             printf("Invalid or missing peers.dat; recreating\n");
     }
 
-    printf("Loaded %i addresses from peers.dat  %"PRId64"ms\n",
+    printf("Loaded %i addresses from peers.dat  %" PRId64 "ms\n",
            addrman.size(), GetTimeMillis() - nStart);
 
     // ********************************************************* Step 11: start node
@@ -1022,11 +1025,11 @@ bool AppInit2(OptionsModel& optionsModel)
     RandAddSeedPerfmon();
 
     //// debug print
-    printf("mapBlockIndex.size() = %"PRIszu"\n",   mapBlockIndex.size());
+    printf("mapBlockIndex.size() = %" PRIszu "\n",   mapBlockIndex.size());
     printf("nBestHeight = %d\n",            nBestHeight);
-    printf("setKeyPool.size() = %"PRIszu"\n",      pwalletMain->setKeyPool.size());
-    printf("mapWallet.size() = %"PRIszu"\n",       pwalletMain->mapWallet.size());
-    printf("mapAddressBook.size() = %"PRIszu"\n",  pwalletMain->mapAddressBook.size());
+    printf("setKeyPool.size() = %" PRIszu "\n",      pwalletMain->setKeyPool.size());
+    printf("mapWallet.size() = %" PRIszu "\n",       pwalletMain->mapWallet.size());
+    printf("mapAddressBook.size() = %" PRIszu "\n",  pwalletMain->mapAddressBook.size());
 
     currentLoadState = LoadState_Begin;
     TransitionLoadState(NULL);

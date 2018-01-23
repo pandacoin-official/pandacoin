@@ -180,11 +180,11 @@ void AccountPage::update()
         int numTransactions = ui->transaction_table->transactionProxyModel->rowCount();
         if(numTransactions==1)
         {
-            ui->num_transactions_found_footer->setText("1 "+tr("transaction found"));
+            ui->num_transactions_found_footer->setText("1 "+tr("transactions found"));
         }
         else
         {
-            ui->num_transactions_found_footer->setText(QString::number(numTransactions)+" "+tr("transaction found"));
+            ui->num_transactions_found_footer->setText(QString::number(numTransactions)+" "+tr("transactions found"));
         }
     }
 

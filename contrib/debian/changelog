@@ -1,4 +1,11 @@
-novacoin (0.4.0~dfsg-1) unstable; urgency=low
+pandacoin (3.0.3.0~dfsg-1) stable; urgency=medium
+
+  [ Raansu ]
+  * Update packaging to pandacoin.
+
+ -- Raansu <Gero3977@gmail.com>  Fri, 16 Sep 2016 17:42:00 -0800
+
+pandacoin (0.4.0~dfsg-1) unstable; urgency=low
 
   [ Balthazar ]
   * Initial release.

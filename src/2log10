@@ -1,0 +1,4 @@
+mkdir -p obj/
+g++ -c -O2  -pthread -Wall -Wextra -Wno-ignored-qualifiers -Wformat -Wformat-security -Wno-unused-parameter -g -DBOOST_SPIRIT_THREADSAFE -I/root/pndcoin/pandacoin/src -I/root/pndcoin/pandacoin/src/obj -DHEADLESS -DUSE_UPNP=0 -DUSE_IPV6=1 -I/root/pndcoin/pandacoin/src/leveldb/include -I/root/pndcoin/pandacoin/src/leveldb/helpers -DHAVE_BUILD_INFO -fno-stack-protector -fstack-protector-all -Wstack-protector -D_FORTIFY_SOURCE=2  -MMD -MF obj/alert.d -o obj/alert.o alert.cpp
+makefile.unix:202: recipe for target 'obj/alert.o' failed
+make: *** [obj/alert.o] Interrupt

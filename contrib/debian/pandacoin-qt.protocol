@@ -1,0 +1,11 @@
+[Protocol]
+exec=pandacoin-qt '%u'
+protocol=pandacoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

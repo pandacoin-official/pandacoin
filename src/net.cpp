@@ -1102,12 +1102,16 @@ void ThreadMapPort2(void* parg)
 #ifndef UPNPDISCOVER_SUCCESS
     /* miniupnpc 1.5 */
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0);
-#else
+#elif MINIUPNPC_API_VERSION < 14
     /* miniupnpc 1.6 */
     int error = 0;
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, &error);
-#endif
-
+#else
+    /* miniupnpc 1.9.20150730 */
+    int error = 0;
+    devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, 2, &error);
+ #endif
+ 
     struct UPNPUrls urls;
     struct IGDdatas data;
     int r;
@@ -1222,12 +1226,7 @@ void MapPort()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char * strDNSSeed[][2] = {
-    {"dnsseeder.pandapool.info", "seeder.pandapool.info"},
-    {"dnsseeder.bamboohouse.info", "seeder.bamboohouse.info"},
-    {"dnsseeder.thepandacoin.net", "seeder.thepandacoin.net"},
-    {"dnsseeder.pandacoinpnd.org", "seeder.pandacoinpnd.org"},
-    {"showed.us", "seeder.showed.us"},
-    {"altmin.es", "seeder.altmin.es"}
+    {"cryptodepot.org", "server1.cryptodepot.org"}
 };
 
 static const char * strDNSSeedTestnet[][2]  = {
@@ -1291,48 +1290,48 @@ void ThreadDNSAddressSeed2(void* parg)
 // HARD CODED SEED NODES
 unsigned int pnSeed[] =
 {
-    0xc246fb94, // bamboohouse.info
-    0x38f1175e, // pandapool 1
-    0x22fc175e, // pandapool 2
-    0x035acc36,
-    0x4cf3d348,
-    0x850e7562,
-    0xa39264c6,
-    0xa059aa6b,
-    0x12487554,
-    0xcc37692e,
-    0xbdaf7245,
-    0x041c146e,
-    0xd01d8018,
-    0xb466f3a2,
-    0xca08555f,
-    0x65e96161,
-    0x0cff7318,
-    0x0478fd1b,
-    0x51a8af4d,
-    0x6141ba62,
-    0xc7a3c80e,
-    0x1ef1cc3e,
-    0x0c803540,
-    0x3682db5d,
-    0xb965c544,
-    0x5464ec2e,
-    0x04c86456,
-    0x7a39c948,
-    0xee827662,
-    0xca9ac445,
-    0x81259062,
-    0xf0b5ba62,
-    0xf0ffdcba,
-    0x3e297247,
-    0x2de4d418,
-    0x7a65bd42,
-    0xd221a755,
-    0x62d4022a,
-    0xef92fc60,
-    0x488aa942,
-    0x1c9ad855,
-    0x30a4d354
+	0x656230E2, // 101.98.48.226 
+	0x6CEA4DE6, // 108.234.77.230 
+	0xA772F9C4, // 167.114.249.196 
+	0xB8A481CA, // 184.164.129.202 
+	0x17EF0FD2, // 23.239.15.210 
+	0x189E0D12, // 24.158.13.18 
+	0x2D4FAA8B, // 45.79.170.139
+	0x33FEC4DE, // 51.254.196.222 
+	0x47CD53D8, // 71.205.83.216 
+	0x5774B4E0, // 87.116.180.224 
+	0x594A46B0, // 89.74.70.176 
+	0x68ABD617, // 104.171.214.23 
+	0x175E3795, // 23.94.55.149 
+	0x328F45BB, // 50.143.69.187
+	0x01BA6EB3, // 1.186.110.179 
+	0x672F42BA, // 103.47.66.186  
+	0x6CA87FC9, // 108.168.127.201 
+	0x6CB42534, // 108.180.37.52 
+	0x6C2C2778, // 108.44.39.120 
+	0x6E891CC1, // 110.137.28.193 
+	0x68c55c64, // 104.197.92.100
+	0x68ee2d8d, // 104.238.45.141
+	0x6dfe1b47, // 109.254.27.71
+	0x782b5c86, // 120.43.92.134
+	0x92ffaf83, // 146.255.175.131
+	0xa32fec81, // 163.47.236.129
+	0xae6e4f34, // 174.110.79.52
+	0xb2784984, // 178.120.73.132
+	0xb2784a84, // 178.120.74.132
+	0xb75997d7, // 183.89.151.215
+	0xb759fa1a, // 183.89.250.26
+	0xb8a2a7be, // 184.162.167.190
+	0xb9bfb129, // 185.191.177.41
+	0xbb65594c, // 187.101.89.76
+	0xbecaffb3, // 190.202.255.179
+	0xc7a789d3, // 199.167.137.211
+	0xd462a7f2, // 212.98.167.242
+	0x1899264e, // 24.153.38.78
+	0x1f126003, // 31.18.96.3
+	0x2d4fbefe, // 45.79.190.254
+	0x2e4d972e, // 46.77.151.46
+	0x74CE1E26 // 116.206.30.38
 };
 
 unsigned int pnSeedTestnet[] =
